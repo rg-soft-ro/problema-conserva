@@ -1,15 +1,14 @@
 import random
 import math
-
-def optimizare_conserve(L, I, raza_min, raza_max, inaltime_min, inaltime_max, numar_generatii=50, numar_indivizi=10, rata_de_mutatie=0.1):
+def optimizare_conserve(L, W, raza_min, raza_max, inaltime_min, inaltime_max, numar_generatii=50, numar_indivizi=10, rata_de_mutatie=0.1):
     """
     Parametri:
     L (int)- lungimea foii de tabla
-    I (int)- latimea foii de tabla
+    W (int)- latimea foii de tabla
     raza_min, raza_max (int)- intervalul pentru raza conservelor
     inaltime_min, inaltime_max (int) - intervalul pentru Inaltimea conservelor
     """
-    aria_maxima = L * I   # Calcularea ariei maxime disponibile bazata pe dimensiunile foii de tabla
+    aria_maxima = L * W   # Calcularea ariei maxime disponibile bazata pe dimensiunile foii de tabla
 
     # Functie pentru calcularea fitness-ului unui individ
     def fitness(raza, inaltime):
@@ -41,11 +40,9 @@ def optimizare_conserve(L, I, raza_min, raza_max, inaltime_min, inaltime_max, nu
     for generatie in range(numar_generatii):
         # Evaluarea fitness-ului pentru fiecare individ din populatie
         fitness_populatie = [fitness(raza, inaltime) for raza, inaltime in populatie]
-
         # Selectarea celor mai buni indivizi pentru reproducere
         selectie_pentru_reproducere = sorted(zip(populatie, fitness_populatie), key=lambda x: x[1], reverse=True)
         selectie_pentru_reproducere = [individ for individ, _ in selectie_pentru_reproducere[:numar_indivizi//2]]
-
         # Crearea noii generatii prin crossover si mutatie
         urmasi = []
         while len(urmasi) < numar_indivizi:
@@ -53,7 +50,6 @@ def optimizare_conserve(L, I, raza_min, raza_max, inaltime_min, inaltime_max, nu
             copil1, copil2 = crossover(parinte1, parinte2)
             urmasi.append(mutatie(copil1))
             urmasi.append(mutatie(copil2))
-
         populatie = urmasi
 
     # Determinarea celui mai bun individ dupa ultima generatie
@@ -62,12 +58,12 @@ def optimizare_conserve(L, I, raza_min, raza_max, inaltime_min, inaltime_max, nu
 
 # Introducerea datelor prin consola
 L = int(input("Introduceti lungimea foii de tabla (cm): "))
-I = int(input("Introduceti latimea foii de tabla (cm): "))
+W = int(input("Introduceti latimea foii de tabla (cm): "))
 raza_min = int(input("Introduceti raza minima a conservelor (cm): "))
 raza_max = int(input("Introduceti raza maxima a conservelor (cm): "))
 inaltime_min = int(input("Introduceti Inaltimea minima a conservelor (cm): "))
 inaltime_max = int(input("Introduceti Inaltimea maxima a conservelor (cm): "))
 
 # Rularea algoritmului genetic cu datele introduse
-rezultat = optimizare_conserve(L, I, raza_min, raza_max, inaltime_min, inaltime_max)
+rezultat = optimizare_conserve(L, W, raza_min, raza_max, inaltime_min, inaltime_max)
 print(f"Cea mai buna solutie: Raza = {rezultat[0][0]} cm, Inaltimea = {rezultat[0][1]} cm, Numarul maxim de conserve: {rezultat[1]}")
