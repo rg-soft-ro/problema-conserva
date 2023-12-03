@@ -27,7 +27,7 @@ Apoi, se împarte aria totală a foii de tablă (produsul dintre lungime și lă
 
 ## Utilizare
 
-Pentru a utiliza programul se ruleaza cu comanda `python conserva.py`, apoi introduce dimensiunile foii de tablă și intervalul dimensiunilor conservelor.
+Pentru a utiliza programul, se va rula cu comanda `python conserva.py`, apoi se introduce dimensiunile foii de tablă și intervalul dimensiunilor conservelor.
 Programul acceptă orice valori și calculează cea mai bună soluție în funcție de datele introduse
 
 Exemplu de utilizare:
