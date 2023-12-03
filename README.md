@@ -5,7 +5,7 @@ Acest program utilizează un algoritm genetic pentru a determina dimensiunile op
 ### Funcții principale
 
 - **`optimizare_conserve`**: Funcția principală a programului, care rulează algoritmul genetic pentru a căuta soluția optimă. Această funcție primește următorii parametri:
-  - `L` și `I` reprezintă dimensiunile foii de tablă (lungime și lățime).
+  - `L` și `W` reprezintă dimensiunile foii de tablă (lungime și lățime).
   - `raza_min` și `raza_max` sunt limitele pentru raza conservelor.
   - `inaltime_min` și `inaltime_max` sunt limitele pentru înălțimea conservelor.
   - `numar_generatii` specifică numărul de generații ale algoritmului genetic.
