@@ -4,10 +4,10 @@ import math
 def optimizare_conserve(L, W, raza_min, raza_max, inaltime_min, inaltime_max, numar_generatii=50, numar_indivizi=10, rata_de_mutatie=0.1):
     """
     Parametri:
-    L (int): Lungimea foii de tabla.
-    I (int): Latimea foii de tabla.
-    raza_min, raza_max (int): Intervalul pentru raza conservelor.
-    inaltime_min, inaltime_max (int) - intervalul pentru Inaltimea conservelor.
+    L (int)- lungimea foii de tabla
+    I (int)- latimea foii de tabla
+    raza_min, raza_max (int)- intervalul pentru raza conservelor
+    inaltime_min, inaltime_max (int) - intervalul pentru Inaltimea conservelor
     """
     aria_maxima = L * I   # Calcularea ariei maxime disponibile bazata pe dimensiunile foii de tabla
 
