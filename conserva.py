@@ -1,7 +1,7 @@
 import random
 import math
 
-def optimizare_conserve(L, W, raza_min, raza_max, inaltime_min, inaltime_max, numar_generatii=50, numar_indivizi=10, rata_de_mutatie=0.1):
+def optimizare_conserve(L, I, raza_min, raza_max, inaltime_min, inaltime_max, numar_generatii=50, numar_indivizi=10, rata_de_mutatie=0.1):
     """
     Parametri:
     L (int)- lungimea foii de tabla
