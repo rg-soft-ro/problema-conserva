@@ -6,8 +6,7 @@ Acest program utilizează un algoritm genetic pentru a determina dimensiunile op
 
 - **`optimizare_conserve`**: Funcția principală a programului, care rulează algoritmul genetic pentru a căuta soluția optimă. Această funcție primește următorii parametri:
   - `L` și `W` reprezintă dimensiunile foii de tablă (lungime și lățime).
-  - `raza_min` și `raza_max` sunt limitele pentru raza conservelor.
-  - `inaltime_min` și `inaltime_max` sunt limitele pentru înălțimea conservelor.
+  - `V` este volumul dat al conservei.
   - `numar_generatii` specifică numărul de generații ale algoritmului genetic.
   - `numar_indivizi` reprezintă numărul de indivizi în fiecare generație a populației.
   - `rata_de_mutatie` este probabilitatea de mutație pentru trăsăturile individuale.
@@ -22,8 +21,7 @@ Algoritmul genetic începe cu o populație inițială de indivizi, fiecare cu di
 3. **Mutația (`mutatie`)**: Se introduc variații aleatorii în trăsăturile indivizilor pentru a asigura diversitatea genetică în populație.
 4. Algoritmul evoluează pe mai multe generații, îmbunătățind treptat soluțiile. La final, programul identifică cel mai eficient set de dimensiuni pentru fabricarea conservelor.
 
-**Programul calculează întâi aria totală necesară pentru a fabrica o singură conservă, luând în calcul atât capetele, cât și suprafața laterală cilindrică. Acest lucru se face folosind formula ariei unui cilindru.
-Apoi, se împarte aria totală a foii de tablă (produsul dintre lungime și lățime) la aria necesară pentru o conservă. Rezultatul acestui calcul este numărul de conserve ce pot fi produse din foaia respectivă, dată fiind dimensiunea specifică a unei conserve.**
+**Programul calculează înălțimea conservelor pe baza razei și volumului dat și apoi determină aria necesară pentru a fabrica o singură conservă. Se împarte aria totală a foii de tablă la aria unei conserve pentru a determina numărul de conserve ce pot fi produse.**
 
 ## Utilizare
 
@@ -33,22 +31,26 @@ Programul acceptă orice valori și calculează cea mai bună soluție în func�
 Exemplu de utilizare:
 
 ```plaintext
-PS C:\Users\rober\Desktop\SI - problema conserve> & C:/Users/rober/AppData/Local/Microsoft/WindowsApps/python3.11.exe "c:/Users/rober/Desktop/SI - problema conserve/conserva.py"
-Introduceți lungimea foii de tablă (cm): 200
-Introduceți lățimea foii de tablă (cm): 100
-Introduceți raza minimă a conservelor (cm): 5
-Introduceți raza maximă a conservelor (cm): 5
-Introduceți înălțimea minimă a conservelor (cm): 10
-Introduceți înălțimea maximă a conservelor (cm): 10
-Cea mai bună soluție: Raza = 5 cm, Înălțimea = 10 cm, Numărul maxim de conserve: 42
-```
-``` plaintext
-PS C:\Users\rober\Desktop\SI - problema conserve> & C:/Users/rober/AppData/Local/Microsoft/WindowsApps/python3.11.exe "c:/Users/rober/Desktop/SI - problema conserve/conserva.py"
+PS C:\Users\rober\Desktop\SI - problema conserve> & C:/Users/rober/AppData/Local/Microsoft/WindowsApps/python3.11.exe "c:/Users/rober/Desktop/SI - problema conserve/conserva2.py"
+
 Introduceti lungimea foii de tabla (cm): 200
 Introduceti latimea foii de tabla (cm): 100
-Introduceti raza minima a conservelor (cm): 5
-Introduceti raza maxima a conservelor (cm): 10
-Introduceti înaltimea minima a conservelor (cm): 7
-Introduceti înaltimea maxima a conservelor (cm): 11
-Cea mai buna solutie: Raza = 5 cm, Înaltimea = 7 cm, Numarul maxim de conserve: 53
+Introduceti volumul conservei (cm^3): 400
+
+Cea mai buna solutie:
+Raza = 3.87 cm
+Inaltimea = 8.50 cm
+Numarul maxim de conserve: 66
+```
+``` plaintext
+PS C:\Users\rober\Desktop\SI - problema conserve> & C:/Users/rober/AppData/Local/Microsoft/WindowsApps/python3.11.exe "c:/Users/rober/Desktop/SI - problema conserve/conserva2.py"
+
+Introduceti lungimea foii de tabla (cm): 800
+Introduceti latimea foii de tabla (cm): 120
+Introduceti volumul conservei (cm^3): 500
+
+Cea mai buna solutie:
+Raza = 4.14 cm
+Inaltimea = 9.30 cm
+Numarul maxim de conserve: 274
 ```
